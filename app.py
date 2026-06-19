@@ -10,6 +10,7 @@ api_key = st.secrets.get("GEMINI_API_KEY")
 
 if api_key:
     genai.configure(api_key=api_key)
+    # የሞዴል ስም ትክክለኛ አጻጻፍ
     model = genai.GenerativeModel('gemini-1.5-flash')
     
     if "messages" not in st.session_state:
@@ -32,4 +33,4 @@ if api_key:
             except Exception as e:
                 st.error(f"ስህተት ተፈጠረ: {e}")
 else:
-    st.error("API Key አልተገኘም! እባክዎ በ Streamlit Secrets ውስጥ ማስገባቱን ያረጋግጡ።")
+    st.error("API Key አልተገኘም! እባክዎ በ Streamlit Secrets ውስጥ በትክክል ማስገባቱን ያረጋግጡ።")
